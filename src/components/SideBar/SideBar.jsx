@@ -9,8 +9,8 @@ const SideBar = () => {
   const navigate = useNavigate();
   return (
     <div className="side-bar">
-      <div className="header">
-        <h2 onClick={() => navigate("/auth")}>socializeME</h2>
+      <div className="header" onClick={() => navigate("/auth")}>
+        <h2>socializeME</h2>
         <h2>sME</h2>
       </div>
 
