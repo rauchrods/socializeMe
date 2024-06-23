@@ -1,0 +1,9 @@
+@import '../../utils//colors.scss';
+
+.my-button {
+  background-color: $primary-blue;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}

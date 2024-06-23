@@ -1,0 +1,86 @@
+@import "../../utils//colors.scss";
+
+.side-bar {
+  width: 200px;
+  //   height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  border-right: 2px solid $primary-gray;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .header {
+    margin-bottom: 1rem;
+    padding: 0.2rem 0;
+    cursor: pointer;
+    border-radius: 5px;
+    h2 {
+      margin: 0.4rem 0;
+      background: $primary-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    :nth-child(2) {
+      display: none;
+    }
+
+    &:hover {
+      background-color: $highlight-gray;
+    }
+  }
+
+  a,
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .item {
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    border-radius: 5px;
+
+    svg {
+      font-size: 30px;
+      color: $primary-text;
+    }
+
+    &:hover {
+      background-color: $highlight-gray;
+    }
+  }
+}
+
+@media (width<700px) {
+  .side-bar {
+    width: 50px;
+
+    .header {
+      :nth-child(1) {
+        display: none;
+      }
+      :nth-child(2) {
+        display: block;
+      }
+    }
+
+    .item {
+      justify-content: center;
+      p {
+        display: none;
+      }
+    }
+  }
+}

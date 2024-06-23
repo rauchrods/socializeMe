@@ -1,0 +1,37 @@
+@import "../../utils/colors.scss";
+.main-container {
+  .display-container.no-auth {
+    margin-left: 226px;
+  }
+
+  .display-container {
+    /* width */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: $scroll-track;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: $primary-text;
+      border-radius: 20px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: $primary-blue;
+    }
+  }
+}
+
+@media (width<700px) {
+  .main-container {
+    .display-container.no-auth {
+      margin-left: 76px;
+    }
+  }
+}

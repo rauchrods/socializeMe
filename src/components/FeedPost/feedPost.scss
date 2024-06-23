@@ -1,0 +1,72 @@
+@import "../../utils/colors.scss";
+
+.feed-post {
+  padding: 1rem 2rem;
+  margin-bottom: 0.8rem;
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    .left-sec {
+      display: flex;
+      column-gap: 8px;
+      align-items: center;
+      .user-name {
+        font-weight: bold;
+        color: $primary-text;
+      }
+    }
+  }
+  .post-body {
+    img {
+      width: 100%;
+      border-radius: 6px;
+    }
+  }
+  .post-footer {
+    padding: 0.5rem 0;
+    font-size: 15px;
+    svg {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+      margin-bottom: 0.2rem;
+      position: relative;
+    }
+
+    :nth-child(4) {
+      color: $primary-gray;
+    }
+
+    input {
+      padding: 0.3rem;
+      padding-right: 3rem;
+      outline: none;
+      background-color: $primary-dark;
+      border: none;
+      border-bottom: 1px solid $primary-gray;
+      width: 100%;
+      color: $white;
+      font-size: 16px;
+    }
+
+    .comment-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+@media (width<=500px) {
+  .feed-post {
+    padding: 1rem 0.6rem;
+  }
+}

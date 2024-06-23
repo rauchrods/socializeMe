@@ -1,0 +1,85 @@
+@import "../../utils//colors.scss";
+
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  > .auth-container-box {
+    border: 2px solid $primary-gray;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    row-gap: 1.4rem;
+    margin: 0.5rem 0;
+    width: 260px;
+
+    h2 {
+      background: $primary-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    input {
+      outline: none;
+      padding: 0.5rem 1rem;
+      background-color: $primary-dark;
+      border: 1px solid $primary-gray;
+      border-radius: 5px;
+      color: $white;
+      width: calc(100% - 2rem);
+
+      &:focus {
+        border: 1px solid $secondary-gray;
+      }
+    }
+
+    .or-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .line {
+        height: 1px;
+        width: 40%;
+        background-color: white;
+      }
+    }
+
+    .google-login {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 10px;
+
+      img {
+        width: 25px;
+      }
+    }
+
+    .redirect-route {
+      display: flex;
+      column-gap: 6px;
+      font-size: 15px;
+
+      :nth-child(2) {
+        cursor: pointer;
+      }
+    }
+  }
+
+  > p {
+    font-size: 14px;
+  }
+
+  .redirect-link {
+    color: $primary-blue;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

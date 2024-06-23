@@ -1,0 +1,31 @@
+@import "../../utils/colors.scss";
+
+.home-page {
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+  padding: 1rem 2rem;
+
+  .feed-posts-container {
+    flex: 3;
+    max-width: 500px;
+    // border: 1px solid rgb(114, 114, 248);
+    max-height: 96vh;
+    overflow-y: auto;
+  }
+  .suggested-users {
+    flex: 2;
+    max-width: 300px;
+    border: 1px solid rgb(248, 114, 114);
+    height: max-content;
+  }
+}
+
+@media (width<=1000px) {
+  .home-page {
+    padding: 1rem 0.6rem;
+    .suggested-users {
+      display: none;
+    }
+  }
+}
