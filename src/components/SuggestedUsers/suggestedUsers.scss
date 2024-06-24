@@ -1,0 +1,36 @@
+@import "../../utils/colors.scss";
+
+.header {
+  padding: 0.4rem 0.5rem;
+  .left-sec {
+    display: flex;
+    column-gap: 0.6rem;
+    align-items: center;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $highlight-gray;
+  }
+}
+
+.body {
+  .top-sec {
+    margin: 0.8rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    .see-all {
+      color: $white;
+    }
+  }
+}
+
+.bottom-sec {
+  font-size: 14px;
+  margin: 0.6rem 0.5rem;
+}
