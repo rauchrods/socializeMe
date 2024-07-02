@@ -1,0 +1,58 @@
+@import "../../utils/colors.scss";
+
+.profile-page {
+  p {
+    margin: 0;
+  }
+  //   border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  margin: 0 15%;
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    column-gap: 1.6rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid $primary-gray;
+
+    .right-sec {
+      > div {
+        display: flex;
+        column-gap: 0.6rem;
+        align-items: center;
+        margin-bottom: 0.3rem;
+      }
+      :nth-child(1) {
+        margin-bottom: 0.3rem;
+        p {
+          margin: 0;
+        }
+      }
+      :nth-child(4) {
+        font-size: 14px;
+      }
+      :nth-child(3) {
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .profile-btn {
+        background-color: $white;
+        padding: 0.4rem 0.8rem;
+      }
+      > .info-cont {
+        font-size: 14px;
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media (width<= 750px) {
+  .profile-header {
+    flex-direction: column;
+    row-gap: 1.6rem;
+  }
+}

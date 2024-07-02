@@ -4,4 +4,8 @@
   color: $primary-blue;
   font-weight: bold;
   cursor: pointer;
+
+  &:hover {
+    color: $white;
+  }
 }
