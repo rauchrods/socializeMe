@@ -1,0 +1,40 @@
+@import "../../utils/colors.scss";
+
+.post-footer {
+  padding: 0.5rem 0;
+  font-size: 15px;
+  svg {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    margin-bottom: 0.2rem;
+    position: relative;
+  }
+
+  :nth-child(4) {
+    color: $primary-gray;
+  }
+
+  input {
+    padding: 0.3rem;
+    padding-right: 3rem;
+    outline: none;
+    background-color: $primary-dark;
+    border: none;
+    border-bottom: 1px solid $primary-gray;
+    width: 100%;
+    color: $white;
+    font-size: 16px;
+  }
+
+  .comment-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

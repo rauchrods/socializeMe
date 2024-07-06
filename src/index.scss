@@ -8,10 +8,29 @@ body {
   color: $white;
   font-family: "Poppins", sans-serif;
   font-style: normal;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $scroll-track;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $primary-text;
+    border-radius: 20px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $primary-blue;
+  }
 }
 
 p {
   margin: 0;
 }
-
-

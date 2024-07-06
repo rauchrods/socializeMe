@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./feedPost.scss";
 import Avatar from "../../UI/Avatar/Avatar";
-import { FaRegHeart, FaRegComment } from "react-icons/fa";
 import TextButton from "../../UI/TextButton/TextButton";
+import PostFooter from "./PostFooter";
 
 const FeedPost = ({ postUrl, userName, avatarUrl }) => {
   const [isLiked, setIsLiked] = useState(false);
@@ -31,31 +31,13 @@ const FeedPost = ({ postUrl, userName, avatarUrl }) => {
         </div>
       </div>
       <div className="post-body">
-        <img src={postUrl} alt={`${userName}-altPic`} onDoubleClick={likeHandler} />
+        <img
+          src={postUrl}
+          alt={`${userName}-altPic`}
+          onDoubleClick={likeHandler}
+        />
       </div>
-      <div className="post-footer">
-        <div className="footer-row">
-          <FaRegHeart
-            style={{ color: isLiked ? "#D22B2B" : "white" }}
-            onClick={likeHandler}
-          />
-          <FaRegComment />
-        </div>
-        <div className="footer-row">
-          {`${likes} ${likes > 1 ? "likes" : "like"}`}
-        </div>
-        <div className="footer-row">
-          <span>{userName}</span>
-          <span>{"_Feeling good"}</span>
-        </div>
-        <div className="footer-row">
-          <span>{`View all ${likes} comments`}</span>
-        </div>
-        <div className="footer-row">
-          <input type="text" name="" id="" placeholder="Add a comment.." />
-          <TextButton className="comment-btn">Post</TextButton>
-        </div>
-      </div>
+      <PostFooter userName={userName} isProfilePage={false} />
     </div>
   );
 };
