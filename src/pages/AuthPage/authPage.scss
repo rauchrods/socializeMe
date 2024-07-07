@@ -24,6 +24,18 @@
       -webkit-text-fill-color: transparent;
     }
 
+    .password-group {
+      width: 100%;
+      position: relative;
+
+      span {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+
     input {
       outline: none;
       padding: 0.5rem 1rem;

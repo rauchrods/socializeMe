@@ -1,4 +1,3 @@
-import React from "react";
 import "./sidebar.scss";
 import { MdLogout } from "react-icons/md";
 
