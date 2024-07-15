@@ -3,9 +3,14 @@ import { MdLogout } from "react-icons/md";
 
 import { sideBarItems } from "../../assets/constants/sideBarItems";
 import { Link, useNavigate } from "react-router-dom";
+import useLogout from "../../hooks/useLogout";
+import MyLoader from "../../UI/Loader/MyLoader";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SideBar = () => {
   const navigate = useNavigate();
+  const { handleLogout, loading, error } = useLogout();
   return (
     <div className="side-bar">
       <div className="header" onClick={() => navigate("/auth")}>
@@ -25,13 +30,16 @@ const SideBar = () => {
       </div>
 
       <div className="footer">
-        <Link to={"./"}>
-          <div className="item">
+        {!loading ? (
+          <div className="item" onClick={handleLogout}>
             <MdLogout />
             <p>{"Log out"}</p>
           </div>
-        </Link>
+        ) : (
+          <MyLoader size={"32px"} />
+        )}
       </div>
+      <ToastContainer />
     </div>
   );
 };

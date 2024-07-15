@@ -1,4 +1,4 @@
-@import '../../utils//colors.scss';
+@import "../../utils//colors.scss";
 
 .my-button {
   background-color: $primary-blue;
@@ -6,4 +6,7 @@
   padding: 0.6rem 1rem;
   border-radius: 4px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

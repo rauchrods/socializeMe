@@ -4,6 +4,7 @@ import Button from "../../UI/Button/Button";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import useSignUpWithEmailAndPassword from "../../hooks/useSignUpWithEmailAndPassword";
 import useToast from "../../hooks/useToast";
+import MyLoader from "../../UI/Loader/MyLoader";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -85,7 +86,7 @@ const SignUp = () => {
         disabled={loading}
         onClick={() => signUp(inputs)}
       >
-        Sign up
+        {loading ? <MyLoader size={"18px"}/> : "Sign up"}
       </Button>
     </>
   );
