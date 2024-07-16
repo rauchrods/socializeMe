@@ -1,19 +1,26 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 import "./pagelayout.scss";
 import SideBar from "../../components/SideBar/SideBar";
+import { auth } from "../../firebase/firebase";
 
 const PageLayout = ({ children }) => {
+  const [user, loading, error] = useAuthState(auth);
   const { pathname } = useLocation();
+
+  const canRenderSideBar = pathname !== "/auth" && user;
 
   console.log(pathname);
   return (
     <div className="main-container">
       {/* display sidebar to the left */}
-      {pathname !== "/auth" && <SideBar />}
+      {canRenderSideBar && <SideBar />}
       {/* display the main container */}
-      <div className={`display-container${pathname !== "/auth" ? " no-auth": ''}`}>
+      <div
+        className={`display-container${pathname !== "/auth" ? " no-auth" : ""}`}
+      >
         {children}
       </div>
     </div>

@@ -1,9 +1,19 @@
 import { auth, firestoreDb } from "../firebase/firebase";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { doc, setDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDocs,
+  query,
+  setDoc,
+  where,
+} from "firebase/firestore";
 import useToast from "./useToast";
+import { useDispatch } from "react-redux";
+import { login } from "../reducers/authSlice";
 
 const useSignUpWithEmailAndPassword = () => {
+  const dispatch = useDispatch();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
@@ -17,6 +27,17 @@ const useSignUpWithEmailAndPassword = () => {
       !inputs.userName
     ) {
       showToast("Please Enter all the required fields", "error");
+      return;
+    }
+
+    const usersRef = collection(firestoreDb, "users");
+
+    const q = query(usersRef, where("userName", "==", inputs.userName));
+
+    const querySnapshot = await getDocs(q);
+
+    if (!querySnapshot.empty) {
+      showToast("Account with this username already exists", "error");
       return;
     }
 
@@ -50,6 +71,7 @@ const useSignUpWithEmailAndPassword = () => {
         showToast("User Created Succesfully", "success");
 
         localStorage.setItem("user-info", JSON.stringify(userDoc));
+        dispatch(login(userDoc));
       }
     } catch (error) {
       console.log(error);
