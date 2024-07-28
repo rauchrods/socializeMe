@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Button from "../../UI/Button/Button";
 import { useNavigate } from "react-router-dom";
+import useLogin from "../../hooks/useLogin";
+import MyLoader from "../../UI/Loader/MyLoader";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -14,16 +16,7 @@ const Login = () => {
     setInputs((currInputs) => ({ ...currInputs, [name]: value }));
   };
 
-  const handleAuth = () => {
-    if (inputs.email === "" || inputs.password === "") {
-      alert("Please enter all the fields");
-      return;
-    }
-
-    console.log("Success!: ", inputs);
-
-    navigate("/");
-  };
+  const { loginhook, user, loading, error } = useLogin();
 
   return (
     <>
@@ -46,9 +39,10 @@ const Login = () => {
         style={{
           width: "100%",
         }}
-        onClick={handleAuth}
+        disabled={loading}
+        onClick={() => loginhook(inputs)}
       >
-        Log in
+        {loading ? <MyLoader size={"18px"} /> : "Login"}
       </Button>
     </>
   );
