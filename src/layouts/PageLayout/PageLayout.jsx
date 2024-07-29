@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import "./pagelayout.scss";
 import SideBar from "../../components/SideBar/SideBar";
 import { auth } from "../../firebase/firebase";
+import { ToastContainer } from "react-toastify";
 
 const PageLayout = ({ children }) => {
   const [user, loading, error] = useAuthState(auth);
@@ -23,6 +24,7 @@ const PageLayout = ({ children }) => {
       >
         {children}
       </div>
+      <ToastContainer />
     </div>
   );
 };

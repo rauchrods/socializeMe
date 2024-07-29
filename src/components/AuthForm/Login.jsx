@@ -1,12 +1,9 @@
 import { useState } from "react";
 import Button from "../../UI/Button/Button";
-import { useNavigate } from "react-router-dom";
 import useLogin from "../../hooks/useLogin";
 import MyLoader from "../../UI/Loader/MyLoader";
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const [inputs, setInputs] = useState({
     email: "",
     password: "",

@@ -39,7 +39,7 @@ const SideBar = () => {
           <MyLoader size={"32px"} />
         )}
       </div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 };

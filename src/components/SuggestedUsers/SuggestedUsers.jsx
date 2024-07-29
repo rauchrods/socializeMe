@@ -4,19 +4,13 @@ import TextButton from "../../UI/TextButton/TextButton";
 import Avatar from "../../UI/Avatar/Avatar";
 import { useNavigate } from "react-router-dom";
 import SuggestedUser from "../SuggestedUser/SuggestedUser";
+import SuggestedHeader from "./SuggestedHeader";
 
 const SuggestedUsers = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="header">
-        <div className="left-sec">
-          <Avatar src={"img1.png"} size="medium" />
-          <p>rauchRodrigues</p>
-        </div>
-
-        <TextButton onClick={() => navigate("./auth")}>Log out</TextButton>
-      </div>
+      <SuggestedHeader />
       <div className="body">
         <div className="top-sec">
           <p>Suggested for you</p>

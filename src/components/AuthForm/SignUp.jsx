@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import Button from "../../UI/Button/Button";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import useSignUpWithEmailAndPassword from "../../hooks/useSignUpWithEmailAndPassword";
@@ -7,7 +7,6 @@ import useToast from "../../hooks/useToast";
 import MyLoader from "../../UI/Loader/MyLoader";
 
 const SignUp = () => {
-  const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     fullName: "",
     userName: "",
@@ -30,17 +29,6 @@ const SignUp = () => {
   const inputsHandler = (name, value) => {
     setInputs((currInputs) => ({ ...currInputs, [name]: value.trim() }));
   };
-
-  if (user) {
-    setInputs({
-      fullName: "",
-      userName: "",
-      email: "",
-      password: "",
-    });
-
-    navigate("/");
-  }
 
   return (
     <>
@@ -86,7 +74,7 @@ const SignUp = () => {
         disabled={loading}
         onClick={() => signUp(inputs)}
       >
-        {loading ? <MyLoader size={"18px"}/> : "Sign up"}
+        {loading ? <MyLoader size={"18px"} /> : "Sign up"}
       </Button>
     </>
   );

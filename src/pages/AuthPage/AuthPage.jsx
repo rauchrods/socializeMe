@@ -27,7 +27,7 @@ const AuthPage = () => {
           <span className="line"></span>
         </div>
 
-        <GoogleAuth />
+        <GoogleAuth isLogIn ={isLogIn}/>
       </div>
       <div className="auth-container-box">
         <div className="redirect-route">

@@ -1,0 +1,19 @@
+@import "../../utils/colors.scss";
+
+.header {
+  padding: 0.4rem 0.5rem;
+  .left-sec {
+    display: flex;
+    column-gap: 0.6rem;
+    align-items: center;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $highlight-gray;
+  }
+}
