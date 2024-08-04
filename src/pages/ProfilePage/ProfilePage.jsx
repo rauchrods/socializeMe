@@ -1,39 +1,27 @@
 import React from "react";
 import "./profilePage.scss";
-import Avatar from "../../UI/Avatar/Avatar";
-import Button from "../../UI/Button/Button";
 import { IoMdGrid } from "react-icons/io";
 import { CiSaveDown2 } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import ProfilePosts from "../../components/Profile/ProfilePosts";
+import useGetUserProfileByUsername from "../../hooks/useGetUserProfileByUsername";
+import { useParams } from "react-router-dom";
+import ProfileHeader from "../../components/Profile/ProfileHeader";
+import ProfileHeaderSkeleton from "../../components/Profile/ProfileHeaderSkeleton";
 
 const ProfilePage = () => {
+  const { userName } = useParams();
+
+  const { isLoading, userProfile } = useGetUserProfileByUsername(userName);
+
   return (
     <div className="profile-page">
-      <div className="profile-header">
-        <div className="left-sec">
-          <Avatar src={"/img4.png"} size="extra-large" />
-        </div>
-        <div className="right-sec">
-          <div>
-            <p className="user-name">Rauch_Rodrigues</p>
-            <Button className="profile-btn">Edit Profile</Button>
-          </div>
-          <div className="info-cont">
-            <p>
-              <span>4</span> Posts
-            </p>
-            <p>
-              <span>149</span> Followers
-            </p>
-            <p>
-              <span>175</span> Following
-            </p>
-          </div>
-          <div>your Username</div>
-          <div>the description of the current user will be displayed here</div>
-        </div>
-      </div>
+      {isLoading || !userProfile ? (
+        <ProfileHeaderSkeleton />
+      ) : (
+        <ProfileHeader />
+      )}
+
       <div className="profile-body">
         <div className="profile-tabs">
           <div className="profile-options">
@@ -50,7 +38,7 @@ const ProfilePage = () => {
           </div>
         </div>
 
-        <ProfilePosts/>
+        <ProfilePosts />
       </div>
     </div>
   );

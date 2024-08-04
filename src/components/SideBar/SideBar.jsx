@@ -7,6 +7,7 @@ import useLogout from "../../hooks/useLogout";
 import MyLoader from "../../UI/Loader/MyLoader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MyModal from "../../UI/Modal/MyModal";
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -36,7 +37,9 @@ const SideBar = () => {
             <p>{"Log out"}</p>
           </div>
         ) : (
-          <MyLoader size={"32px"} />
+          <MyModal>
+            <MyLoader size={"32px"} />
+          </MyModal>
         )}
       </div>
       {/* <ToastContainer /> */}

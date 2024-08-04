@@ -12,8 +12,7 @@ const PageLayout = ({ children }) => {
   const { pathname } = useLocation();
 
   const canRenderSideBar = pathname !== "/auth" && user;
-
-  console.log(pathname);
+  
   return (
     <div className="main-container">
       {/* display sidebar to the left */}
